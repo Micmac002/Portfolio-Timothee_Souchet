@@ -1,0 +1,157 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Header */
+.EcritureHautPage {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 20px 0;
+    border-bottom: 3px solid dodgerblue;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.EcritureHautPage a {
+    color: dodgerblue;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.EcritureHautPage a:hover {
+    color: white;
+}
+
+/* Sections principales */
+.Acceuil, .Apropos, .Education, .Experiences, .Competences {
+    min-height: 100vh;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    border-top: 2px solid dodgerblue;
+}
+
+.Acceuil {
+    position: relative;
+    color: white;
+}
+
+.Acceuil .ImageFond {
+    width: 1470px;
+    height: 100vh;
+    position: relative;
+    right: 40px;
+    top: 27px;
+}
+
+.ImageFond{
+    height: 1200px;
+}
+
+.FondSurImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border: 2px solid white;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.FondSurImage h1 {
+    font-size: 40px;
+    color: white;
+}
+
+.FondSurImage span {
+    font-size: 20px;
+    font-weight: 200;
+    color: dodgerblue;
+}
+
+/* Section "À propos", "Éducation", "Expériences", "Compétences" */
+h2 {
+    font-size: 70px;
+    color: dodgerblue;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li{
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 20px;
+    border-left: 5px solid dodgerblue;
+}
+ul li:hover{
+    background: rgba(255, 255, 255, 0.2)
+}
+
+ul li h3 {
+    font-size: 30px;
+    color: white;
+}
+
+ul li p {
+    font-size: 20px;
+    color: lightgray;
+}
+
+#a-propos p{
+    border: solid 2px black;
+    padding: 21px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid dodgerblue;
+}
+#a-propos h2 {
+    font-size: 70px;
+}
+
+.icone{
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50px;
+    height: auto; /* Ajuster la taille de l'image */
+}
+
+#competences ul a{
+    text-decoration: none;
+    color: white;
+}
+
+#Langages{
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+.transportable.flipped{
+    background-color: white;
+} 
+
