@@ -10,6 +10,7 @@ body {
     background-color: #121212;
     color: white;
     line-height: 1.6;
+    font-size: 16px; /* Taille par défaut de la police */
 }
 
 /* Header */
@@ -64,7 +65,7 @@ body {
     top: 27px;
 }
 
-.ImageFond{
+.ImageFond {
     height: 1200px;
 }
 
@@ -78,10 +79,9 @@ body {
     border: 2px solid white;
 }
 
-a{
+a {
     text-decoration: none;
 }
-
 
 .FondSurImage h1 {
     font-size: 40px;
@@ -94,7 +94,7 @@ a{
     color: dodgerblue;
 }
 
-/* Section "À propos", "Éducation", "Expériences", "Compétences" */
+/* Section "À propos", "Éducation", "Compétences" */
 h2 {
     font-size: 70px;
     color: dodgerblue;
@@ -105,14 +105,15 @@ ul {
     list-style-type: none;
 }
 
-ul li{
+ul li {
     background: rgba(255, 255, 255, 0.1);
     margin: 10px 0;
     padding: 20px;
     border-left: 5px solid dodgerblue;
 }
-ul li:hover{
-    background: rgba(255, 255, 255, 0.2)
+
+ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 ul li h3 {
@@ -125,33 +126,125 @@ ul li p {
     color: lightgray;
 }
 
-#a-propos p{
+#a-propos p {
     border: solid 2px black;
     padding: 21px;
     background-color: rgba(255, 255, 255, 0.1);
     border-left: 5px solid dodgerblue;
 }
+
 #a-propos h2 {
     font-size: 70px;
 }
 
-.icone{
-    display: block; 
+.icone {
+    display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 50px;
     height: auto; /* Ajuster la taille de l'image */
 }
 
-#competences ul a{
+#competences ul a {
     text-decoration: none;
     color: white;
 }
 
-#Langages{
+#Langages {
     transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
-.transportable.flipped{
-    background-color: white;
-} 
 
+.transportable.flipped {
+    background-color: white;
+}
+
+/* Media Queries - Responsivité */
+@media screen and (max-width: 768px) {
+    .EcritureHautPage {
+        padding: 15px 0;
+    }
+
+    .EcritureHautPage a {
+        font-size: 12px;
+        margin: 0 10px;
+    }
+
+    .Acceuil .ImageFond {
+        width: 100%;
+        height: auto;
+        top: 0;
+        right: 0;
+    }
+
+    .FondSurImage h1 {
+        font-size: 30px;
+    }
+
+    .FondSurImage span {
+        font-size: 16px;
+    }
+
+    .Acceuil, .Apropos, .Education, .Competences {
+        padding: 20px 10px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    ul li {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    ul li h3 {
+        font-size: 20px;
+    }
+
+    ul li p {
+        font-size: 14px;
+    }
+
+    .icone {
+        max-width: 35px;
+    }
+}
+
+/* Pour les très petits écrans comme les téléphones */
+@media screen and (max-width: 480px) {
+    .EcritureHautPage a {
+        font-size: 10px;
+    }
+
+    .FondSurImage h1 {
+        font-size: 24px;
+    }
+
+    .FondSurImage span {
+        font-size: 14px;
+    }
+
+    .icone {
+        max-width: 30px;
+    }
+
+    .Acceuil, .Apropos, .Education, .Competences {
+        padding: 10px 5px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    ul li {
+        padding: 8px;
+    }
+
+    ul li h3 {
+        font-size: 18px;
+    }
+
+    ul li p {
+        font-size: 12px;
+    }
+}
