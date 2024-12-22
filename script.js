@@ -73,3 +73,80 @@ items.forEach((item) => {
         }
     });
 });
+
+const translations = {
+    fr: {
+        home: "Accueil",
+        about: "À propos",
+        education: "Éducation",
+        skills: "Compétences",
+        title: "Étudiant en réseaux & télécommunication.",
+        welcome: "Bienvenue chez moi ! Je m'intéresse à l'informatique et à la compréhension des systèmes et des réseaux, je suis un étudiant en réseaux et télécommunication à l'IUT de Béziers et j'aime explorer différents domaines qui m'aident à progresser dans mes compétences, y compris dans des sujets comme la cybersécurité.",
+        iut: "Diplôme Universitaire de Technologie - Réseaux et Télécommunication (2024-2027)",
+        lycee: "Baccalauréat Maths, Physique-Chimie - Mention Bien (2024)",
+        langages: "Langages",
+        reseaux: "Réseaux",
+        systemes: "Systèmes",
+        outils: "Outils",
+        button: "🇫🇷 Français"
+    },
+    en: {
+        home: "Home",
+        about: "About",
+        education: "Education",
+        skills: "Skills",
+        title: "Student in Networks & Telecommunications.",
+        welcome: "Welcome to my website! I am passionate about IT and understanding systems and networks. I am a student in Networks and Telecommunications at IUT Béziers, and I enjoy exploring different fields that help me grow my skills, including topics like cybersecurity.",
+        iut: "University Diploma of Technology - Networks and Telecommunications (2024-2027)",
+        lycee: "High School Diploma in Maths, Physics-Chemistry - Honors (2024)",
+        langages: "Languages",
+        reseaux: "Networks",
+        systemes: "Systems",
+        outils: "Tools",
+        button: "🇬🇧 English"
+    }
+};
+
+// Langue par défaut
+let currentLanguage = "fr";
+
+document.getElementById("toggle-language").addEventListener("click", () => {
+    currentLanguage = currentLanguage === "fr" ? "en" : "fr";
+    updateLanguage();
+});
+
+function updateLanguage() {
+    const lang = translations[currentLanguage];
+
+    // Mise à jour des liens du menu
+    document.querySelector('a[href="#home"]').textContent = lang.home;
+    document.querySelector('a[href="#a-propos"]').textContent = lang.about;
+    document.querySelector('a[href="#education"]').textContent = lang.education;
+    document.querySelector('a[href="#competences"]').textContent = lang.skills;
+
+    // Mise à jour des titres <h2> avec la classe 'titre'
+    const titles = document.querySelectorAll("h2.titre");
+    titles[0].textContent = lang.about;
+    titles[1].textContent = lang.education;
+    titles[2].textContent = lang.skills;
+
+    // Mise à jour de la balise <span> dans la section d'accueil
+    document.querySelector(".FondSurImage span").textContent = lang.title;
+
+    // Mise à jour du paragraphe "À propos"
+    document.querySelector("#a-propos p").textContent = lang.welcome;
+
+    // Mise à jour des titres H2 des compétences
+    document.querySelector("#Langages strong").textContent = lang.langages + " :";
+    document.querySelector("#Réseaux strong").textContent = lang.reseaux + " :";
+    document.querySelector("#Systèmes strong").textContent = lang.systemes + " :";
+    document.querySelector("#Outils strong").textContent = lang.outils + " :";
+
+    // Mise à jour des descriptions dans la section "Éducation"
+    const educationItems = document.querySelectorAll("#education ul li p");
+    educationItems[0].textContent = lang.iut;
+    educationItems[1].textContent = lang.lycee;
+
+    // Mise à jour du texte du bouton de langue
+    document.getElementById("toggle-language").textContent = lang.button;
+}
